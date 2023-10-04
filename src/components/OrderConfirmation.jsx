@@ -12,12 +12,13 @@ function OrderConfirmation({ order }) {
           <div className={style.confirmationContent}>Customer Address: {order.address}</div>
         </div>
       </div>
-      <div>
-        {order.items.map((item) => (
-          <p key={item.id}>
-            x{item.quantity}&nbsp;&nbsp;&nbsp;{item.item.name}
-            &nbsp;&nbsp;&nbsp;${item.item.price}
-          </p> ))}
+      <div className={style.items}>
+      {order.items.map((item) => (
+        <p className={style.items} key={item.item.id}>
+          x{item.quantity}&nbsp;&nbsp;&nbsp;{item.item.name}
+          &nbsp;&nbsp;&nbsp;${item.item.price}
+        </p>
+      ))}
       </div>
     </>
   );
